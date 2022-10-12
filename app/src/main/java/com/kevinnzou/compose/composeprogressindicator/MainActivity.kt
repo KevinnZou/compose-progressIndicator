@@ -3,7 +3,10 @@ package com.kevinnzou.compose.composeprogressindicator
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.spring
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.LinearProgressIndicator
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.material.TextButton
@@ -29,7 +32,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainScreen() {
-    var progress by remember { mutableStateOf(0f) }
+    var progress by remember { mutableStateOf(0.5f) }
     Surface(
         modifier = Modifier.fillMaxSize(),
         color = Color.White
@@ -39,37 +42,66 @@ fun MainScreen() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            Text("Simple ProgressIndicator Example", fontSize = 16.sp)
-            Spacer(modifier = Modifier.height(20.dp))
-            SimpleProgressIndicatorWithAnim(
-                modifier = Modifier
-                    .padding(15.dp)
-                    .fillMaxWidth()
-                    .height(4.dp),
-                progress,
-                cornerRadius = 35.dp,
-                thumbRadius = 1.dp,
-                thumbOffset = 1.5.dp
-            )
-            Spacer(modifier = Modifier.height(20.dp))
-            Row(
-                modifier = Modifier
-                    .height(40.dp)
-                    .wrapContentWidth(),
-                horizontalArrangement = Arrangement.spacedBy(10.dp)
+            Column(
+                modifier = Modifier.wrapContentSize(),
+                verticalArrangement = Arrangement.spacedBy(20.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
             ) {
-                TextButton(onClick = {
-                    progress = (progress - 0.1f).coerceAtLeast(0f)
-                }) {
-                    Text(text = "Decrease", color = Color.Black)
-                }
-                TextButton(onClick = {
-                    progress = (progress + 0.1f).coerceAtMost(1f)
-                }) {
-                    Text(text = "Increase", color = Color.Black)
+                Text("Simple ProgressIndicator Examples", fontSize = 16.sp)
+                LinearProgressIndicator(
+                    progress, modifier = Modifier
+                        .padding(15.dp)
+                        .fillMaxWidth()
+                        .height(12.dp)
+                )
+                SimpleProgressIndicatorWithAnim(
+                    modifier = Modifier
+                        .padding(15.dp)
+                        .fillMaxWidth()
+                        .height(12.dp),
+                    progress = progress,
+                    trackColor = Color(0XFFFBE8E8),
+                    progressBarColor = Color.Yellow,
+                    thumbColor = Color.Magenta,
+                    cornerRadius = 15.dp,
+                    thumbRadius = 6.dp,
+                    thumbOffset = 6.dp,
+                    animationSpec = spring(
+                        dampingRatio = Spring.DampingRatioNoBouncy,
+                        stiffness = Spring.StiffnessVeryLow,
+                        visibilityThreshold = 0.4f,
+                    )
+                )
+                SimpleProgressIndicatorWithAnim(
+                    modifier = Modifier
+                        .padding(15.dp)
+                        .fillMaxWidth()
+                        .height(12.dp),
+                    progress,
+                    cornerRadius = 15.dp,
+                    thumbRadius = 5.dp,
+                    thumbOffset = 6.dp
+                )
+                Row(
+                    modifier = Modifier
+                        .height(40.dp)
+                        .wrapContentWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(10.dp)
+                ) {
+                    TextButton(onClick = {
+                        progress = (progress - 0.1f).coerceAtLeast(0f)
+                    }) {
+                        Text(text = "Decrease", color = Color.Black)
+                    }
+                    TextButton(onClick = {
+                        progress = (progress + 0.1f).coerceAtMost(1f)
+                    }) {
+                        Text(text = "Increase", color = Color.Black)
+                    }
                 }
             }
         }
+
     }
 }
 
