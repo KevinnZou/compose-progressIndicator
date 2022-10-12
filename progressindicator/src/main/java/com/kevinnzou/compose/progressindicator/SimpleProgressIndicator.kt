@@ -103,11 +103,15 @@ fun SimpleProgressIndicator(
         val progressWidth = size.width * progress
         drawLinearIndicatorBackground(trackColor, cornerRadius)
         drawLinearIndicator(progress, progressBarColor, cornerRadius)
-        drawThumb(
-            thumbRadius,
-            thumbColor,
-            Offset(progressWidth - thumbOffset.toPx(), size.height / 2f)
-        )
+        val thumbCenter = progressWidth - thumbOffset.toPx()
+        if (thumbCenter > 0) {
+            drawThumb(
+                thumbRadius,
+                thumbColor,
+                Offset(progressWidth - thumbOffset.toPx(), size.height / 2f)
+            )
+        }
+
     }
 }
 
