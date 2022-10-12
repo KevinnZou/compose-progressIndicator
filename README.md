@@ -1,6 +1,8 @@
 # compose-progressIndicator
 This Library is designed to improve the [LinearProgressIndicator](https://foso.github.io/Jetpack-Compose-Playground/material/linearprogressindicator/) provided by Jetpack Compose. Beside the base functionality provided by LinearProgressIndicator, This library supports the round corners for progressbar, thumb at the end of the bar, and the animations when progress changed. Developers can customize the size, postion, and the color of the thumb.
 
+<img src="media/simple-indicator.gif" width=300> <img src="media/errorlist.gif" width=300>
+
 # Usage
 All functionalities mentioned above are implemented in one component: [SimpleProgressIndicatorWithAnim](https://github.com/KevinnZou/compose-progressIndicator/blob/main/progressindicator/src/main/java/com/kevinnzou/compose/progressindicator/SimpleProgressIndicator.kt)
 ```kotlin
