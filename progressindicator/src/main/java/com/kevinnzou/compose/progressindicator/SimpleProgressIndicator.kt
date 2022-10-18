@@ -6,7 +6,6 @@ import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.spring
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.progressSemantics
-import androidx.compose.material.LinearProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -143,7 +142,7 @@ private fun DrawScope.drawThumb(radius: Dp, color: Color, center: Offset) {
 }
 
 /**
- * Contains the default values used for [LinearProgressIndicator].
+ * Contains the default values used for [SimpleProgressIndicator].
  */
 object SimpleProgressIndicatorDefaults {
     /**
