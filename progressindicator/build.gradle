@@ -53,16 +53,16 @@ afterEvaluate {
                 // You can then customize attributes of the publication as shown below.
                 groupId = 'com.github.kevinnzou'
                 artifactId = 'compose-progressindicator'
-                version = '0.0.3'
+                version = '0.0.4'
             }
             // Creates a Maven publication called “debug”.
-            debug(MavenPublication) {
-                // Applies the component for the debug build variant.
-                from components.debug
-                groupId = 'com.github.kevinnzou'
-                artifactId = 'compose-progressindicator'
-                version = '0.0.3-SNAPSHOT'
-            }
+//            debug(MavenPublication) {
+//                // Applies the component for the debug build variant.
+//                from components.debug
+//                groupId = 'com.github.kevinnzou'
+//                artifactId = 'compose-progressindicator'
+//                version = '0.0.3-SNAPSHOT'
+//            }
         }
     }
 }
