@@ -53,7 +53,7 @@ afterEvaluate {
                 // You can then customize attributes of the publication as shown below.
                 groupId = 'com.github.kevinnzou'
                 artifactId = 'compose-progressindicator'
-                version = '0.0.4'
+                version = '1.0.0'
             }
             // Creates a Maven publication called “debug”.
 //            debug(MavenPublication) {

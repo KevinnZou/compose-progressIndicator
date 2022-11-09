@@ -58,7 +58,7 @@ allprojects {
 }
 
 dependencies {
-    implementation("com.github.kevinnzou:compose-progressindicator:0.0.4")
+    implementation("com.github.kevinnzou:compose-progressindicator:1.0.0")
 }
 
 ```
