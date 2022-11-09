@@ -48,7 +48,7 @@ fun SimpleProgressIndicator(
 ```
 
 # Download
-The Current Release Version is 0.0.4. For future release, please refer to the release session of the github repository.
+The Current Release Version is 1.0.0. For future release, please refer to the release session of the github repository.
 ``` kotlin
 allprojects {
   repositories {
